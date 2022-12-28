@@ -1,0 +1,44 @@
+{
+    "manifest_version": 2,
+    "name": "AE3Fox",
+    "version": "1.0",
+    "description": "Study English Words!",
+    "icons": {
+        "48": "icons/ic_main.png"
+    },
+    "permissions": [
+        "*://acexp.ecs.osaka-cu.ac.jp/*",
+        "notifications",
+        "webRequest",
+        "webRequestBlocking",
+        "storage"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://acexp.ecs.osaka-cu.ac.jp/*"
+            ],
+            "js": [
+                "content_script.js"
+            ],
+            "run_at": "document_end",
+            "match_about_blank": true,
+            "all_frames": true
+        }
+    ],
+    "applications": {
+        "gecko": {
+            "id": "tomo0611.ae3@hotmail.com"
+        }
+    },
+    "web_accessible_resources": [
+        "content_interception.js",
+        "scripts/*"
+    ],
+    "content_security_policy": "script-src 'self'; object-src 'self'"
+}

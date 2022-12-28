@@ -1,0 +1,6 @@
+# Exclude Builds
+builds/
+*.zip
+*.xpi
+*.html
+releases/
